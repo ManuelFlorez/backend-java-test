@@ -129,4 +129,6 @@ public class Customer {
         this.typeDocument = typeDocument;
         this.document = document;
     }
+
+    public Customer() { }
 }

@@ -5,6 +5,7 @@ import com.api.rest.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import static java.util.Objects.nonNull;
 import java.util.Optional;
 
 @Service
@@ -15,9 +16,10 @@ public class CustomerService {
 
     public Customer getCustomer(String typeDocument, String document) {
         Customer customer = customerRepository.findByDocument(document);
-        if(customer != null && customer.getTypeDocument().equals(typeDocument)) {
+        if(nonNull(customer) && nonNull(customer.getTypeDocument()) && customer.getTypeDocument().equals(typeDocument)) {
             return customer;
         }
+
         return null;
     }
 

@@ -23,7 +23,7 @@ public class CustomerController {
             return customer != null ?
                     new ResponseEntity<>(customer, HttpStatus.OK):
                     new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
-        } catch (Exception t) {
+        } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
